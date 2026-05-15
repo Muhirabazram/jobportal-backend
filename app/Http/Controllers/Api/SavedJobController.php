@@ -40,7 +40,7 @@ class SavedJobController extends Controller
     public function index(Request $request)
     {
         $user = $request->user();
-        $saved = $user->savedJobs()->with('jobListing.company')->paginate(10);
+        $saved = $user->savedJobs()->with(['jobListing.company', 'jobListing.jobType'])->paginate(10);
         return response()->json($saved);
     }
 }

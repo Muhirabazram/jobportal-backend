@@ -20,5 +20,5 @@ COPY . .
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 RUN composer install --no-dev --optimize-autoloader
 
-# Jalankan Laravel menggunakan port yang disediakan Render secara otomatis
-CMD php artisan serve --host=0.0.0.0 --port=$PORT
+# Tambahkan perintah storage:link sebelum menjalankan server
+CMD php artisan storage:link && php artisan serve --host=0.0.0.0 --port=$PORT

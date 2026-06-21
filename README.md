@@ -1,59 +1,215 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# JobPortal Indonesia - Backend API 💼🌐
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+[![Laravel Version](https://img.shields.io/badge/Laravel-v12.0-red?style=flat-square&logo=laravel)](https://laravel.com)
+[![PHP Version](https://img.shields.io/badge/PHP-%5E8.2-blue?style=flat-square&logo=php)](https://php.net)
+[![Authentication](https://img.shields.io/badge/Auth-Sanctum-orange?style=flat-square&logo=laravel)](https://laravel.com/docs/sanctum)
+[![Deployment](https://img.shields.io/badge/Demo-Live-green?style=flat-square)](https://jobportal-indonesia.vercel.app/)
 
-## About Laravel
+Selamat datang di repositori **JobPortal Indonesia (Backend API)**. Proyek ini merupakan bagian dari aplikasi pencarian kerja (*Job Seeker*) modern yang dirancang untuk menghubungkan talenta terbaik dengan perusahaan impian secara efisien, aman, dan transparan. 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Seluruh arsitektur basis data, layanan backend, dan antarmuka frontend telah berhasil dideploy dan dapat diakses oleh publik.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🔗 Tautan Penting (Quick Links)
 
-## Learning Laravel
+Untuk melihat demonstrasi aplikasi secara langsung atau mempelajari kode sumber di sisi frontend, silakan kunjungi tautan berikut:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+| Akses Layanan | Tautan Resmi |
+| --- | --- |
+| **Aplikasi Live (Demo)** | [https://jobportal-indonesia.vercel.app/](https://jobportal-indonesia.vercel.app/) |
+| **Repositori Backend** | [https://github.com/Muhirabazram/jobportal-backend](https://github.com/Muhirabazram/jobportal-backend) |
+| **Repositori Frontend** | [https://github.com/Muhirabazram/jobportal-frontend](https://github.com/Muhirabazram/jobportal-frontend) |
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## 📝 Deskripsi Proyek
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+**JobPortal Indonesia** adalah platform pencarian kerja interaktif (*Job Seeker & Employer Portal*). Backend aplikasi ini bertindak sebagai penyedia layanan RESTful API utama yang mengelola logika bisnis, autentikasi berbasis peran (*role-based access control*), manajemen berkas (seperti unggah CV dan avatar), serta relasi database yang kompleks.
 
-### Premium Partners
+Aplikasi ini mendukung dua peran pengguna utama (*Multi-Role System*):
+1. **Pencari Kerja (Job Seeker)**: Pengguna yang dapat menjelajahi lowongan pekerjaan, menyaring pekerjaan berdasarkan kategori/tipe, mengunggah profil biodata lengkap beserta CV dalam format PDF, melakukan *bookmark* lowongan (*Saved Jobs*), mengirim lamaran pekerjaan, serta melacak status lamaran mereka secara langsung.
+2. **Pemberi Kerja / Perusahaan (Employer)**: Pengguna perwakilan perusahaan yang memiliki hak untuk mempublikasikan lowongan pekerjaan baru, mengelola detail lowongan, meninjau seluruh lamaran kerja yang masuk dari pelamar, menjadwalkan wawancara (*interview*), hingga menentukan keputusan kelulusan (*Accepted/Rejected/Hired*).
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+---
 
-## Contributing
+## 🚀 Fitur Utama
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Sistem backend ini mengimplementasikan berbagai fitur unggulan:
 
-## Code of Conduct
+*   🔒 **Autentikasi & Keamanan (Laravel Sanctum)**: Sistem login, registrasi untuk dua tipe peran, pemeriksaan email aktif, pengaturan ulang kata sandi, serta perlindungan route API menggunakan token bearer.
+*   👥 **Multi-Role Middleware**: Pemisahan otoritas rute yang ketat antara `job_seeker` dan `employer` guna memastikan keamanan data operasional.
+*   📂 **Manajemen Berkas & Berkas Media**: Layanan unggah, pembaruan, dan penghapusan foto profil (avatar) dan berkas CV (PDF) untuk pelamar secara asinkronus dan aman.
+*   💼 **Manajemen Lowongan Pekerjaan (Job Listings)**: Fungsionalitas CRUD (Create, Read, Update, Delete) lowongan pekerjaan lengkap dengan status gaji, deskripsi, slug ramah SEO, kategori, serta tipe pekerjaan.
+*   📝 **Sistem Lamaran Pekerjaan (Job Applications)**: Alur lamaran terintegrasi yang memungkinkan pelamar mengirim CV serta pengalaman kerja mereka, dan perusahaan dapat memproses status lamaran secara real-time lengkap dengan alasan penolakan (*rejection reason*) jika lamaran ditolak.
+*   ⭐ **Bookmark & Saved Jobs**: Memungkinkan pencari kerja untuk menandai lowongan yang diminati untuk diakses kembali di kemudian hari.
+*   📊 **Dashboard Statistik Terintegrasi**: Statistik agregat untuk memantau ringkasan aktivitas di aplikasi (jumlah lamaran baru, lowongan aktif, statistik wawancara) baik bagi perusahaan maupun data statistik beranda.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+## 🛠️ Teknologi yang Digunakan
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Backend dirancang dengan arsitektur modern menggunakan teknologi berikut:
 
-## License
+*   **Framework Core**: [Laravel 12.x](https://laravel.com/) (Framework PHP terbaik dengan performa dan keamanan tinggi)
+*   **Bahasa Pemrograman**: PHP v8.2 atau lebih tinggi
+*   **Autentikasi**: Laravel Sanctum (Token-Based RESTful API)
+*   **Database**: PostgreSQL (Production di Supabase) / SQLite atau MySQL (Lokal)
+*   **Containerization**: Docker (Dikonfigurasi dengan PHP-CLI dan ekstensi `pdo_pgsql` untuk Supabase)
+*   **Asset Bundler & Server**: Vite & PHP-CLI Server
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+## 📂 Struktur Direktori Utama
+
+Berikut adalah gambaran arsitektur folder utama pada repositori backend ini:
+
+```bash
+jobportal-backend/
+├── app/
+│   ├── Http/Controllers/Api/  # Logika Controller RESTful API (Auth, Jobs, Applications, dll)
+│   ├── Middleware/            # Middleware kustom (termasuk Role-checking)
+│   └── Models/                # Model database (User, Company, JobListing, Category, JobType, dll)
+├── bootstrap/                 # Bootstrap konfigurasi aplikasi
+├── config/                    # Seluruh konfigurasi Laravel
+├── database/
+│   ├── migrations/            # Struktur skema tabel basis data
+│   └── seeders/               # Seeder data awal untuk Kategori dan Tipe Pekerjaan
+├── routes/
+│   ├── api.php                # Semua endpoint RESTful API terdaftar di sini
+│   └── web.php                # Rute web standar
+├── Dockerfile                 # Konfigurasi container Docker untuk deployment backend
+├── vercel.json                # Konfigurasi rewrite untuk deployment backend
+└── composer.json              # Daftar pustaka PHP dan dependensi proyek
+```
+
+---
+
+## 📡 Daftar API Endpoints
+
+Aplikasi ini menggunakan prefix `/api` untuk semua rute. Berikut adalah daftar endpoint yang tersedia:
+
+### 1. Endpoint Publik (Tanpa Autentikasi)
+
+| Method | Endpoint | Deskripsi |
+| :--- | :--- | :--- |
+| `POST` | `/api/register/job-seeker` | Pendaftaran akun pencari kerja (*Job Seeker*) |
+| `POST` | `/api/register/employer` | Pendaftaran akun pemberi kerja (*Employer / Company*) |
+| `POST` | `/api/login` | Autentikasi pengguna untuk mendapatkan token akses |
+| `POST` | `/api/check-email` | Mengecek apakah email sudah terdaftar |
+| `POST` | `/api/reset-password` | Melakukan reset kata sandi |
+| `GET` | `/api/categories` | Mendapatkan semua kategori pekerjaan |
+| `GET` | `/api/job-types` | Mendapatkan semua tipe pekerjaan (Full-time, Remote, dll) |
+| `GET` | `/api/jobs` | Mendapatkan daftar lowongan dengan filter & pencarian |
+| `GET` | `/api/jobs/{slug}` | Mendapatkan detail informasi satu lowongan kerja berdasarkan slug |
+| `GET` | `/api/home-stats` | Mendapatkan data statistik beranda publik |
+
+### 2. Endpoint Terproteksi (Membutuhkan Bearer Token)
+
+Semua rute di bawah ini wajib melampirkan header `Authorization: Bearer <token_anda>`.
+
+#### A. Endpoint Profil Umum (Job Seeker & Employer)
+| Method | Endpoint | Deskripsi |
+| :--- | :--- | :--- |
+| `POST` | `/api/logout` | Menghapus token aktif dan keluar dari sistem |
+| `GET` | `/api/profile` | Mendapatkan biodata profil pengguna yang sedang login |
+| `PUT` | `/api/profile` | Memperbarui biodata profil |
+| `POST` | `/api/change-password` | Mengubah kata sandi pengguna |
+| `POST` | `/api/profile/avatar` | Mengunggah / memperbarui foto profil |
+| `DELETE` | `/api/profile/avatar` | Menghapus foto profil |
+| `POST` | `/api/profile/cv` | Mengunggah / memperbarui berkas CV (PDF) |
+| `DELETE` | `/api/profile/cv` | Menghapus berkas CV dari sistem |
+| `DELETE` | `/api/profile/delete-account`| Menghapus akun secara permanen |
+| `GET` | `/api/dashboard/stats` | Statistik dashboard personal sesuai perannya |
+
+#### B. Khusus Peran: Pencari Kerja (Role: `job_seeker`)
+| Method | Endpoint | Deskripsi |
+| :--- | :--- | :--- |
+| `GET` | `/api/saved-jobs` | Mendapatkan daftar lowongan kerja yang disimpan |
+| `POST` | `/api/jobs/{slug}/save` | Menyimpan lowongan kerja (*bookmark*) |
+| `DELETE` | `/api/jobs/{slug}/unsave` | Menghapus lowongan kerja dari daftar simpanan |
+| `POST` | `/api/jobs/{slug}/apply` | Mengirim lamaran pekerjaan ke lowongan tujuan |
+| `GET` | `/api/my-applications` | Mendapatkan daftar riwayat lamaran yang dikirim |
+| `DELETE` | `/api/applications/{id}`| Membatalkan lamaran pekerjaan |
+
+#### C. Khusus Peran: Perusahaan / Employer (Role: `employer`)
+| Method | Endpoint | Deskripsi |
+| :--- | :--- | :--- |
+| `POST` | `/api/jobs` | Membuat dan memposting lowongan kerja baru |
+| `PUT` | `/api/jobs/{id}` | Memperbarui informasi lowongan pekerjaan |
+| `DELETE` | `/api/jobs/{id}` | Menghapus lowongan pekerjaan |
+| `GET` | `/api/my-jobs` | Mendapatkan semua lowongan yang diposting perusahaan ini |
+| `GET` | `/api/jobs/{id}/applications` | Mendapatkan semua pelamar untuk lowongan tertentu |
+| `PUT` | `/api/applications/{id}/status`| Memperbarui status lamaran pelamar (Terima, Tolak, Wawancara) |
+| `GET` | `/api/my-interviews` | Mendapatkan daftar wawancara terjadwal perusahaan |
+
+---
+
+## 💻 Panduan Instalasi Lokal
+
+Jika Anda ingin menjalankan proyek backend ini di lingkungan lokal Anda, silakan ikuti langkah-langkah berikut:
+
+### Prasyarat
+Pastikan komputer Anda sudah terpasang:
+*   PHP (versi minimal 8.2)
+*   Composer
+*   Node.js & NPM
+*   Database Engine (MySQL, PostgreSQL, atau SQLite)
+
+### Langkah-langkah
+1.  **Clone Repositori**:
+    ```bash
+    git clone https://github.com/Muhirabazram/jobportal-backend.git
+    cd jobportal-backend
+    ```
+
+2.  **Instal Dependensi PHP**:
+    ```bash
+    composer install
+    ```
+
+3.  **Salin Konfigurasi Environment**:
+    ```bash
+    copy .env.example .env
+    ```
+    *Catatan: Atur konfigurasi database pada berkas `.env` sesuai dengan database lokal Anda.*
+
+4.  **Buat Application Key**:
+    ```bash
+    php artisan key:generate
+    ```
+
+5.  **Jalankan Migrasi Database dan Seeder**:
+    ```bash
+    php artisan migrate --seed
+    ```
+    *Perintah ini akan membuat semua tabel basis data serta mengisi tipe pekerjaan dan kategori awal.*
+
+6.  **Buat Simbolik Link Storage**:
+    ```bash
+    php artisan storage:link
+    ```
+    *Langkah penting agar berkas avatar dan CV yang diunggah dapat diakses secara publik melalui URL.*
+
+7.  **Instal & Build Aset (Opsional/Vite)**:
+    ```bash
+    npm install
+    npm run build
+    ```
+
+8.  **Jalankan Server Lokal**:
+    ```bash
+    php artisan serve
+    ```
+    Server lokal Anda akan berjalan secara default di `http://127.0.0.1:8000`.
+
+---
+
+## 🤝 Apresiasi & Kontak
+
+Proyek ini dibangun sebagai wujud dedikasi untuk memfasilitasi kebutuhan pencarian kerja dengan antarmuka yang bersih serta sistem backend yang solid. Terima kasih atas ketertarikan Anda untuk meninjau proyek ini.
+
+Jika Anda memiliki pertanyaan, masukan, atau ingin berkolaborasi lebih lanjut, silakan hubungi saya melalui repositori resmi atau kunjungi aplikasi kami di [JobPortal Indonesia](https://jobportal-indonesia.vercel.app/).
+
+---
+*Dibuat dengan profesionalisme, komitmen, dan penuh perhatian.*

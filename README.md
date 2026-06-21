@@ -23,13 +23,11 @@ Untuk melihat demonstrasi aplikasi secara langsung atau mempelajari kode sumber 
 
 ---
 
-## 📝 Deskripsi Proyek
+## 📌 Deskripsi Proyek
 
-**JobPortal Indonesia** adalah platform pencarian kerja interaktif (*Job Seeker & Employer Portal*). Backend aplikasi ini bertindak sebagai penyedia layanan RESTful API utama yang mengelola logika bisnis, autentikasi berbasis peran (*role-based access control*), manajemen berkas (seperti unggah CV dan avatar), serta relasi database yang kompleks.
+**JobPortal Indonesia** adalah platform pencarian kerja yang dirancang untuk menghubungkan para pencari kerja (Job Seekers) dengan perusahaan penyedia lowongan kerja (Employers/HRD). Aplikasi ini menyediakan pengalaman yang mulus bagi pengguna untuk mencari pekerjaan sesuai keahlian, melamar secara online, melacak status lamaran secara real-time, serta memudahkan HRD untuk mengelola lowongan pekerjaan dan memproses dokumen pelamar.
 
-Aplikasi ini mendukung dua peran pengguna utama (*Multi-Role System*):
-1. **Pencari Kerja (Job Seeker)**: Pengguna yang dapat menjelajahi lowongan pekerjaan, menyaring pekerjaan berdasarkan kategori/tipe, mengunggah profil biodata lengkap beserta CV dalam format PDF, melakukan *bookmark* lowongan (*Saved Jobs*), mengirim lamaran pekerjaan, serta melacak status lamaran mereka secara langsung.
-2. **Pemberi Kerja / Perusahaan (Employer)**: Pengguna perwakilan perusahaan yang memiliki hak untuk mempublikasikan lowongan pekerjaan baru, mengelola detail lowongan, meninjau seluruh lamaran kerja yang masuk dari pelamar, menjadwalkan wawancara (*interview*), hingga menentukan keputusan kelulusan (*Accepted/Rejected/Hired*).
+Dalam proyek ini, **Backend API** bertindak sebagai penyedia layanan RESTful API utama yang mengelola logika bisnis, autentikasi berbasis peran (*role-based access control*), manajemen berkas (seperti unggah CV dan avatar), serta relasi database yang kompleks.
 
 ---
 
@@ -205,11 +203,11 @@ Pastikan komputer Anda sudah terpasang:
 
 ---
 
-## 🤝 Apresiasi & Kontak
+## ✍️ Penulis & Kontributor
 
-Proyek ini dibangun sebagai wujud dedikasi untuk memfasilitasi kebutuhan pencarian kerja dengan antarmuka yang bersih serta sistem backend yang solid. Terima kasih atas ketertarikan Anda untuk meninjau proyek ini.
+Proyek ini dikembangkan oleh **Muhirabazram** sebagai bagian dari pemenuhan tugas praktikum kuliah Full Stack Semester 4 (Pak Rena). Terima kasih yang sebesar-besarnya atas bimbingan dan dukungan yang diberikan selama pengembangan proyek ini.
 
-Jika Anda memiliki pertanyaan, masukan, atau ingin berkolaborasi lebih lanjut, silakan hubungi saya melalui repositori resmi atau kunjungi aplikasi kami di [JobPortal Indonesia](https://jobportal-indonesia.vercel.app/).
+Jika Anda memiliki pertanyaan, saran, atau ingin berkolaborasi terkait proyek ini, silakan hubungi melalui akun GitHub resmi penulis.
 
 ---
-*Dibuat dengan profesionalisme, komitmen, dan penuh perhatian.*
+*Dibuat dengan penuh dedikasi untuk mendukung ekosistem pencarian kerja digital yang lebih baik di Indonesia.*
